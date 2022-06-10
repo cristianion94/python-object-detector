@@ -8,5 +8,5 @@ Generic object detector interface for Python
 
 # Development
 > black ./src/ ./tests/ .
-mypy .
-pflake8 .
+> mypy .
+> pflake8 .
