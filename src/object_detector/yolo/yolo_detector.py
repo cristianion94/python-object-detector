@@ -114,8 +114,10 @@ def yolo(image: Image, min_confidence=0.5, threshold=0.3):
             obj = BoundingBox(
                 name=dior_label_name,
                 confidence=confidences[i],
-                xmin=x, ymin=y,
-                xmax=x + w, ymax=y + h
+                xmin=x,
+                ymin=y,
+                xmax=x + w,
+                ymax=y + h,
             )
             detected_objects.append(obj)
 
