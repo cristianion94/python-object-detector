@@ -20,8 +20,8 @@ COLORS = np.loadtxt(YOLO_COLORS_PATH, dtype='uint8')
 
 
 # derive the paths to the YOLO weights and model configuration
-weights_path = YOLO_WEIGHTS_PATH
-config_path = YOLO_CONFIG_PATH
+weights_path = str(YOLO_WEIGHTS_PATH)
+config_path = str(YOLO_CONFIG_PATH)
 # load our YOLO object detector trained on COCO dataset (80 classes)
 print("[INFO] loading YOLO from disk...")
 net = cv2.dnn.readNetFromDarknet(config_path, weights_path)
@@ -120,4 +120,4 @@ def yolo(image: np.ndarray, min_confidence=0.5, threshold=0.3):
             )
             detected_objects.append(obj)
 
-    return detected_objects
+    return json.dumps(detected_objects)

@@ -12,3 +12,10 @@ class TestScanBuffer:
         result = json.loads(out)
 
         assert SupportedTypes.jpg.value == result["mime_type"]
+        assert 1 == len(result["objects"])
+        assert "aeroplane" == result["objects"][0]["name"]
+        assert 502 == result["objects"][0]["xmin"]
+        assert 482 == result["objects"][0]["ymin"]
+        assert 640 == result["objects"][0]["xmax"]
+        assert 604 == result["objects"][0]["ymax"]
+        assert result["objects"][0]["confidence"]

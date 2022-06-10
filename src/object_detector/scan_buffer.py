@@ -5,6 +5,8 @@ import cv2
 from filetype import guess_mime
 from enum import Enum, unique
 
+from src.object_detector.yolo.yolo_detector import yolo as detector
+
 
 @unique
 class SupportedTypes(Enum):
@@ -28,9 +30,12 @@ def scan_buffer(buffer: bytes) -> str:
     mime_type = validate_file_type(buffer)
     image = decode_image(buffer)
 
+    detector_out = json.loads(detector(image))
+
     scan_output = {
         "buffer_size": len(buffer),
         "mime_type": mime_type.value,
+        "objects": detector_out
     }
 
     return json.dumps(scan_output, indent=4)
