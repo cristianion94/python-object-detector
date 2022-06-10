@@ -24,7 +24,7 @@ def decode_image(buffer: bytes):
     return cv2.imdecode(np.frombuffer(buffer, dtype=np.uint8), flags=1)
 
 
-def scan_buffer(buffer: bytes, out: TextIO) -> None:
+def scan_buffer(buffer: bytes) -> str:
     mime_type = validate_file_type(buffer)
     image = decode_image(buffer)
 
@@ -33,4 +33,4 @@ def scan_buffer(buffer: bytes, out: TextIO) -> None:
         "mime_type": mime_type.value,
     }
 
-    out.write(json.dumps(scan_output, indent=4))
+    return json.dumps(scan_output, indent=4)

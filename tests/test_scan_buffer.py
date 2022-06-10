@@ -8,8 +8,7 @@ class TestScanBuffer:
 
     def test_scan_buffer(self, image_buffer) -> None:
         """Tests something"""
-        out = StringIO()
-        scan_buffer(image_buffer, out)
-        result = json.loads(out.getvalue())
+        out = scan_buffer(image_buffer)
+        result = json.loads(out)
 
         assert SupportedTypes.jpg.value == result["mime_type"]
