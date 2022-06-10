@@ -7,6 +7,12 @@ Generic object detector interface for Python
 # History
 
 # Development
-> black ./src/ ./tests/ .
-> mypy .
-> pflake8 .
+```shell
+black ./src/ ./tests/ .
+```
+```shell
+mypy .
+```
+```shell
+pflake8 .
+```
