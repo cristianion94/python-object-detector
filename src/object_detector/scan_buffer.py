@@ -30,7 +30,7 @@ def scan_buffer(buffer: bytes, out: TextIO) -> None:
 
     scan_output = {
         "buffer_size": len(buffer),
-        "mime_type": mime_type,
+        "mime_type": mime_type.value,
     }
 
     out.write(json.dumps(scan_output, indent=4))
