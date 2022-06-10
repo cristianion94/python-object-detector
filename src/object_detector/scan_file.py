@@ -11,4 +11,5 @@ def scan_file(path):
         buffer = file_in.read()
 
     with open(path + ".out", "w") as file_out:
-        scan_buffer(buffer, file_out)
+        out = scan_buffer(buffer)
+        file_out.write(out)
