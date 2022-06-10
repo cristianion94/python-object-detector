@@ -23,19 +23,21 @@ def validate_file_type(buffer: bytes):
 
 
 def decode_image(buffer: bytes):
-    return cv2.imdecode(np.frombuffer(buffer, dtype=np.uint8), flags=1)
+    return cv2.imdecode(np.frombuffer(buffer, dtype=np.uint8), flags=cv2.IMREAD_COLOR)
 
 
 def scan_buffer(buffer: bytes) -> str:
     mime_type = validate_file_type(buffer)
     image = decode_image(buffer)
-
     detector_out = json.loads(detector(image))
 
     scan_output = {
         "buffer_size": len(buffer),
         "mime_type": mime_type.value,
-        "objects": detector_out
+        "res_y": image.shape[0],
+        "res_x": image.shape[1],
+        "channels": image.shape[2],
+        "objects": detector_out,
     }
 
     return json.dumps(scan_output, indent=4)

@@ -27,3 +27,9 @@ def image_buffer(data_path: Path, image_name: str) -> bytes:
         buffer = file_in.read()
 
     return buffer
+
+
+@pytest.fixture()
+def object_name() -> str:
+    """Returns object name"""
+    return "aeroplane"
