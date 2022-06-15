@@ -1,0 +1,4 @@
+poetry build
+poetry config repositories.testpypi https://test.pypi.org/legacy/
+poetry publish -r testpypy
+poetry publish
