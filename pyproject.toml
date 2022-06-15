@@ -5,7 +5,7 @@ description = "Python object detector for aerial detection."
 authors = ["Cristian Ion <cristian.ion94@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include="src"}]
+packages = [{include="object_detector"}]
 homepage = "https://github.com/cristianion94/python-object-detector"
 repository = "https://github.com/cristianion94/python-object-detector"
 keywords = ["cv", "detection", "image"]
