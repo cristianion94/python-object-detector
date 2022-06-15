@@ -1,11 +1,10 @@
-from typing import TextIO
 import json
 import numpy as np
 import cv2
 from filetype import guess_mime
 from enum import Enum, unique
 
-from src.object_detector.yolo.yolo_detector import yolo as detector
+from object_detector.yolo.yolo_detector import yolo as detector
 
 
 @unique

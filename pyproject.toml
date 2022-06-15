@@ -1,16 +1,18 @@
 [tool.poetry]
 name = "python-object-detector"
 version = "0.1.0"
-description = ""
+description = "Python object detector for aerial detection."
 authors = ["Cristian Ion <cristian.ion94@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{include="src"}]
 homepage = "https://github.com/cristianion94/python-object-detector"
 repository = "https://github.com/cristianion94/python-object-detector"
-keywords = ["flake8", "markdown", "lint"]
+keywords = ["cv", "detection", "image"]
 classifiers = [
     "Environment :: Console",
     "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 include = [
     "LICENSE",

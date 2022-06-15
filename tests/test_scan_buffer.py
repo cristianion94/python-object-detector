@@ -1,7 +1,6 @@
-from src.object_detector import scan_buffer
-from io import StringIO
+from object_detector import scan_buffer
 import json
-from src.object_detector.scan_buffer import SupportedTypes
+from object_detector.scan_buffer import SupportedTypes
 
 
 class TestScanBuffer:

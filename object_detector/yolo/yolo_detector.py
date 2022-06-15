@@ -2,7 +2,7 @@ import json
 import cv2
 import time
 import numpy as np
-from src.object_detector.settings import DATA_PATH
+from object_detector.settings import DATA_PATH
 
 
 YOLO_LABELS_PATH = DATA_PATH.joinpath("coco.names")

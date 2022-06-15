@@ -1,4 +1,4 @@
-from src.object_detector import scan_buffer
+from object_detector import scan_buffer
 
 
 def scan_file(path):
